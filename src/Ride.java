@@ -11,7 +11,7 @@ public class Ride {
         this.to = to;
         this.c = c;
         this.d = d;
-        this.fare = Math.abs(this.from.distance - this.to.distance)*10;
-        this.com = this.fare*0.3;
+        this.fare = Math.abs(this.from.distance - this.to.distance) * 10;
+        this.com = this.fare * 0.3;
     }
 }
