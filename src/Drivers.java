@@ -6,11 +6,11 @@ public class Drivers {
 
     int id, age;
     String name;
-    private String pwd;
     String gender;
     boolean rest = false;
     String loc;
     List<Ride> rides = new ArrayList<>();
+    private String pwd;
 
     public Drivers(int id, int age, String name, String pwd, String gender, String loc) {
         this.id = id;
@@ -21,12 +21,12 @@ public class Drivers {
         this.loc = loc;
     }
 
-    public String getPwd() {
-        return pwd;
-    }
-
     public Drivers(int id) {
         this.id = id;
+    }
+
+    public String getPwd() {
+        return pwd;
     }
 
     @Override
@@ -44,18 +44,16 @@ public class Drivers {
 
     public void viewHistory() {
 
-        System.out.println("Cab ID: "+id);
-        System.out.println("Cab Driver Name: "+name);
+        System.out.println("Cab ID: " + id);
+        System.out.println("Cab Driver Name: " + name);
         System.out.println("Trip details:");
-        if(rides.isEmpty())
-        {
+        if (rides.isEmpty()) {
             System.out.println("No rides yet");
             return;
         }
-        System.out.println(String.format("%15s%15s%15s%15s%15s","Source","Destination","Cab Detail","Fare","ZULA Commission"));
-        for(Ride r: rides)
-        {
-            System.out.println(String.format("%15s%15s%15s%15s%15s",r.from.name,r.to.name,r.c.id,r.fare,r.com));
+        System.out.println(String.format("%15s%15s%15s%15s%15s", "Source", "Destination", "Cab Detail", "Fare", "ZULA Commission"));
+        for (Ride r : rides) {
+            System.out.println(String.format("%15s%15s%15s%15s%15s", r.from.name, r.to.name, r.c.id, r.fare, r.com));
         }
     }
 }
