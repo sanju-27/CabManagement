@@ -19,7 +19,7 @@ public class Main {
                     System.out.println("Welcome Admin");
                     int ch1;
                     do {
-                        System.out.println("1. View Cabs\n2.View Customer\n3.New Cab\n4.New Location\n5.Exit");
+                        System.out.println("1. View Cabs\n2.View Customer\n3.New Cab\n4.New Location\n5.View Locations\n6.Exit");
                         ch1 = Integer.parseInt(br.readLine());
                         switch (ch1)
                         {
@@ -35,8 +35,11 @@ public class Main {
                             case 4:
                                 admin.addLoc();
                                 break;
+                            case 5:
+                                admin.viewLoc();
+                                break;
                         }
-                    } while (ch1<5);
+                    } while (ch1<6);
                     break;
                 case 1:
                     Drivers d = admin.dLogin();
