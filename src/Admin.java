@@ -10,7 +10,6 @@ public class Admin {
     List<Customer> customer = new ArrayList<>();
     List<Location> location = new ArrayList<>();
     public Admin() {
-        int i;
         Drivers d1 = new Drivers(1,43,"aaa","111","M","D");
         Drivers d2 = new Drivers(2,31,"bbb","222","M","G");
         Drivers d3 = new Drivers(3,38,"ccc","333","F","H");
@@ -145,6 +144,14 @@ public class Admin {
         d.rest=true;
     }
 
+    public void viewLoc()
+    {
+        System.out.println("Place\tDistance");
+        for(Location l: location)
+        {
+            System.out.println(l.name+"\t"+l.distance);
+        }
+    }
     public void viewCabs() {
 
         if(driver.isEmpty())
