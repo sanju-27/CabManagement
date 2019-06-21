@@ -6,10 +6,10 @@ public class Customer {
 
     int id;
     String name;
-    private String pwd;
     int age;
     String gender;
     List<Ride> rideList = new ArrayList<>();
+    private String pwd;
 
     public Customer(int id, String name, String pwd, int age, String gender) {
         this.id = id;
@@ -37,18 +37,16 @@ public class Customer {
     }
 
     public void viewHistory() {
-        System.out.println("Customer ID: "+this.id);
-        System.out.println("Customer name: "+this.name);
+        System.out.println("Customer ID: " + this.id);
+        System.out.println("Customer name: " + this.name);
         System.out.println("Trip Details:");
-        if(this.rideList.isEmpty())
-        {
+        if (this.rideList.isEmpty()) {
             System.out.println("No rides Yet");
             return;
         }
-        System.out.println(String.format("%15s%15s%15s%15s","Source","Destination","Cab Detail","Fare"));
-        for(Ride r: this.rideList)
-        {
-            System.out.println(String.format("%15s%15s%15s%15s",r.from.name,r.to.name,r.d.id,r.fare));
+        System.out.println(String.format("%15s%15s%15s%15s", "Source", "Destination", "Cab Detail", "Fare"));
+        for (Ride r : this.rideList) {
+            System.out.println(String.format("%15s%15s%15s%15s", r.from.name, r.to.name, r.d.id, r.fare));
         }
 
     }
