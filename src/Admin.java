@@ -87,15 +87,6 @@ public class Admin {
         int i = 0;
         int min = Integer.MAX_VALUE, mid = 0;
         int[] a = new int[this.driver.size()];
-//        for(Location l: this.location)
-//        {
-//            a[i]=Math.abs(floc.distance - l.distance);
-//            if(a[i]<min && this.driver.get(l.cabId-1).rest!=true)
-//            {
-//                min = a[i];
-//                mid = i;
-//            }
-//        }
         for (Drivers d : driver) {
             Location tl = location.get(location.indexOf(new Location(d.loc)));
 //            System.out.println(tl);
@@ -110,9 +101,9 @@ public class Admin {
             }
             i++;
         }
-//        System.out.println(floc+" "+toloc);
 
         Drivers d = this.driver.get(mid);
+        System.out.println("Cab is at Location"+d.loc);
         Ride r = new Ride(rideId, floc, toloc, c, d);
         System.out.println("Ride Details:");
         System.out.println("From: " + floc.name + "\tTo: " + to);
@@ -157,7 +148,6 @@ public class Admin {
             System.out.println("Trip details:");
             if (d.rides.isEmpty()) {
                 sb.append("No rides yet");
-//                return;
             } else {
                 sb.append(String.format("%15s%15s%15s%15s%15s\n", "Source", "Destination", "Cab Detail", "Fare", "ZULA Commission"));
                 for (Ride r : d.rides) {
