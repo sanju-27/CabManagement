@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
-    static int rideId = 0;
+    private static int rideId = 0;
 
     public static void main(String[] args) throws IOException {
         Admin admin = new Admin();
